@@ -30,6 +30,7 @@
     <p>Velocity: <span id="vel"></span></p>
 
     <script>
+      const flag = true;
       const map = L.map("ISSmap").setView([0, 0], 6);
 
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -68,7 +69,10 @@
 
       async function draw_map() {
         const coords = await get_data();
+        if(flag){
         map.setView([coords.lat, coords.lon], 6);
+          flag = false;
+        }
         marker.setLatLng([coords.lat, coords.lon]);
       }
 
