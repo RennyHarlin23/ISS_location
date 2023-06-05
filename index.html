@@ -69,8 +69,10 @@
       }
 
       async function draw_map() {
-           const flag = true;
+      
+        
         const coords = await get_data();
+           const flag = true;
   
         if(flag)
         map.setView([coords.lat, coords.lon], 6);
