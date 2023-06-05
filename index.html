@@ -72,12 +72,12 @@
       
         
         const coords = await get_data();
-           const flag = true;
+       
   
-        if(flag)
+        if(!flag)
         map.setView([coords.lat, coords.lon], 6);
-          flag = false;
-        }
+        flag = true;
+      }
         marker.setLatLng([coords.lat, coords.lon]);
       }
 
